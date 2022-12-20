@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'BotApp-DA'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B83385168613498F97994242E6C674BB }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A009D7FF7F864DE489D5E8504FD85235 }}
