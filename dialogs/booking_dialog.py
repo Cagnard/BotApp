@@ -145,7 +145,13 @@ class BookingDialog(CancelAndHelpDialog):
             booking_details.budget = step_context.result
 
             return await step_context.end_dialog(booking_details)
-
+        booking_details = step_context.options
+        dico = {}
+        dico['destination'] = booking_details.destination
+        dico['origin'] = booking_details.origin
+        dico['travel_date_dep'] = booking_details.travel_date_dep
+        dico['budget'] = booking_details.budget
+        self.telemetry_client.track_trace('not good',dico,3)
         return await step_context.end_dialog()
 
     def is_ambiguous(self, timex: str) -> bool:
