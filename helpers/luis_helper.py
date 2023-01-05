@@ -112,15 +112,21 @@ class LuisHelper:
                 # e.g. missing a Year.
                 print(result.budget)
                 print('Prout4')
-                date_entities = recognizer_result.entities.get("DateDep", [])
+                date_entities = recognizer_result.entities.get("datetime", [])
                 print(date_entities)
                 if date_entities:
                     timex = date_entities[0]["timex"]
 
                     if timex:
-                        datetime = timex[0].split("T")[0]
-
-                        result.travel_date_dep = datetime
+                        if date_entities[0]["type"]=='date':
+                            datetime = timex[0].split("T")[0]
+                            result.travel_date_dep = datetime
+                        if date_entities[0]["type"]=='daterange':
+                            datetime_str = timex[0].split("(")[1].split(",")[0]
+                            datetime_end = timex[0].split(",")[1]
+                            result.travel_date_dep = datetime_str
+                            result.travel_date_arr = datetime_end
+#                        result.travel_date_dep = datetime
 
                 else:
                     result.travel_date_dep = None
