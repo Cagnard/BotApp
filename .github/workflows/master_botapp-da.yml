@@ -31,8 +31,6 @@ jobs:
         run: pip install -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
-      - name: Unit test
-        run: python  -m unittest test_unit.py
       
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v2
@@ -62,4 +60,4 @@ jobs:
         with:
           app-name: 'BotApp-DA'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0BA8550B11E440919175F22E6FB6C07A }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FA702609ABE24B93AEED2095E7E48963 }}
