@@ -12,7 +12,8 @@ class DefaultConfig:
     PORT = 3978
     APP_ID = os.environ.get("MicrosoftAppId", "")
     APP_PASSWORD = os.environ.get("MicrosoftAppPassword", "")
-    LUIS_APP_ID = os.environ.get("LuisAppId", "1b4130ff-d5ba-4c40-a183-fd9e76d6f993")
+    #LUIS_APP_ID = os.environ.get("LuisAppId", "1b4130ff-d5ba-4c40-a183-fd9e76d6f993")
+    LUIS_APP_ID = os.environ.get("LuisAppId", "92190da4-f154-44bc-9094-6d100fc6e910")
     LUIS_API_KEY = os.environ.get("LuisAPIKey", "550ab39c266b4d0a98d7275dfbcf4bca")
     # LUIS endpoint host name, ie "westus.api.cognitive.microsoft.com"
     LUIS_API_HOST_NAME = os.environ.get("LuisAPIHostName", "chatbot-da.cognitiveservices.azure.com")
